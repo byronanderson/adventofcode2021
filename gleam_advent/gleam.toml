@@ -2,5 +2,6 @@ name = "gleam_advent"
 
 [dependencies]
 gleam_stdlib = "~> 0.18"
+gleam_bitwise = "~> 1.1"
 
 # repository = { type = "github", user = "my-user", repo = "gleam_advent" }
