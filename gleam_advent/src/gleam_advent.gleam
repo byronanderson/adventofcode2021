@@ -1,7 +1,7 @@
 import utils
-import day03
+import day04
 
 pub fn main() {
-  utils.inspect(#("part1", day03.part1()))
-  utils.inspect(#("part2", day03.part2()))
+  utils.inspect(#("part1", day04.part1()))
+  utils.inspect(#("part2", day04.part2()))
 }

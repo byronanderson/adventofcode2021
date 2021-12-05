@@ -18,3 +18,15 @@ pub fn inspect(value: a) -> a {
   inspect_(value)
   value
 }
+
+pub fn group_by(mylist: List(a), attribute: fn(a) -> b) -> map.Map(b, List(a)) {
+  mylist
+  |> list.fold(map.new(), fn(acc, el) {
+    map.update(acc, attribute(el), fn(current) {
+      case current {
+        option.Some(grouped_elements) -> [el, ..grouped_elements]
+        option.None -> [el]
+      }
+    })
+  })
+}
