@@ -1,6 +1,7 @@
 import gleam/map
 import gleam/list
 import gleam/option
+import gleam/int
 
 external fn inspect_(a) -> a = "erlang" "display"
 pub external fn sleep(a) -> a = "timer" "sleep"
@@ -29,4 +30,9 @@ pub fn group_by(mylist: List(a), attribute: fn(a) -> b) -> map.Map(b, List(a)) {
       }
     })
   })
+}
+
+pub fn assert_parse_int(input: String) -> Int {
+  assert Ok(data) = int.parse(input)
+  data
 }
