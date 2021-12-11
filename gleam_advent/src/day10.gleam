@@ -101,7 +101,7 @@ fn finish_consume_block(chars: List(Char), block_type: BlockType, until: Char) -
   case chars {
     [] -> Error(UnexpectedEndOfBlock(block_type))
     [char, ..rest] if char == until -> Ok(#(Block(block_type: block_type, inner: []), rest))
-    [char, ..rest] -> {
+    [char, ..] -> {
       case char {
         CloseParen -> Error(UnexpectedChar(CloseParen))
         CloseSquare -> Error(UnexpectedChar(CloseSquare))
