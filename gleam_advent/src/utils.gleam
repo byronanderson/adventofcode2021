@@ -20,7 +20,7 @@ pub fn inspect(value: a) -> a {
   value
 }
 
-pub fn group_by(mylist: List(a), attribute: fn(a) -> b) -> map.Map(b, List(a)) {
+pub fn group_by(mylist, attribute) {
   mylist
   |> list.fold(map.new(), fn(acc, el) {
     map.update(acc, attribute(el), fn(current) {
