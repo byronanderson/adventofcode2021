@@ -1,5 +1,6 @@
 import gleam/map
 import gleam/list
+import gleam/string
 import gleam/option
 import gleam/int
 
@@ -35,4 +36,18 @@ pub fn group_by(mylist, attribute) {
 pub fn assert_parse_int(input: String) -> Int {
   assert Ok(data) = int.parse(input)
   data
+}
+
+pub fn binary_to_int(binary: String) -> Int {
+  binary
+  |> string.to_graphemes()
+  |> binary_to_int_(0)
+}
+
+fn binary_to_int_(chars, acc) {
+  case chars {
+    [] -> acc
+    ["0", ..rest] -> binary_to_int_(rest, acc * 2)
+    ["1", ..rest] -> binary_to_int_(rest, acc * 2 + 1)
+  }
 }
