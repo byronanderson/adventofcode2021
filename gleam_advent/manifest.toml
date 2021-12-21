@@ -4,8 +4,10 @@
 packages = [
   { name = "gleam_bitwise", version = "1.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_bitwise", source = "hex", outer_checksum = "8C32EC46F4D805350202E59F15B057AB4A79F3847F3EEC5B49AFF0C4EA7E3576" },
   { name = "gleam_stdlib", version = "0.18.0", build_tools = ["gleam"], requirements = [], otp_app = "gleam_stdlib", source = "hex", outer_checksum = "2938F996BBB25D75E973226846CDDFA33AB5590AFC8A9D043A356EA85272510D" },
+  { name = "pqueue", version = "2.0.4", build_tools = ["rebar3"], requirements = [], otp_app = "pqueue", source = "hex", outer_checksum = "0EAA17045E320984518986752917DB5970C24776DC96DF1F4CA809801A13BC8C" },
 ]
 
 [requirements]
 gleam_bitwise = "~> 1.1"
 gleam_stdlib = "~> 0.18"
+pqueue = "~> 2.0"
