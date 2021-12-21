@@ -15,7 +15,7 @@ type SNumber {
 }
 
 fn reduce_s_number(input: SNumber) -> SNumber {
-  case find_too_deep_thing(input, []) {
+  case find_too_deep_thing(input) {
     Ok(location) -> explode(input, location) |> reduce_s_number()
     Error(Nil) -> {
       case find_literal_greater_than_10(input) {
@@ -48,10 +48,7 @@ type Direction {
   Right
 }
 
-fn find_too_deep_thing(input: SNumber, directions: List(Direction)) -> Result(#(List(Direction), Int, Int), Nil) {
-  let check = fn(number: SNumber, direction: Direction) {
-    find_too_deep_thing(number, [direction, ..directions])
-  }
+fn find_too_deep_thing(input: SNumber) -> Result(#(List(Direction), Int, Int), Nil) {
   traverse(input, [])
   |> iterator.map(fn(node) {
     case node {

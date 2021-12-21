@@ -13,10 +13,6 @@ fn input() {
   data |> string.trim()
 }
 
-fn parse(input: String) {
-  input
-}
-
 fn hex_to_binary(input: String) -> String {
   input
   |> string.to_graphemes()

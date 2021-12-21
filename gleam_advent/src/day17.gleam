@@ -68,12 +68,6 @@ fn position_in_range(value: Int, lower_bound: Int, upper_bound: Int) -> Bool {
 fn find_y_velocity(x_velocity: Int, input: Input) {
   count_from(input.y_start)
   |> iterator.map(fn(y_velocity) {
-    let going_up_but_too_early_x = fn(data) {
-      let #(velocity, position) = data
-      let #(_, y_velocity) = velocity
-      let #(x, _) = position
-      y_velocity > 0 && x < input.x_start
-    }
     let could_possibly_overlap_later = fn(data) {
       let #(velocity, position) = data
       let #(_, y_velocity) = velocity
@@ -88,11 +82,11 @@ fn find_y_velocity(x_velocity: Int, input: Input) {
     }
     let no_x_overlap = fn(data) {
       let #(_, position) = data
-      let #(x_position, y_position) = position
+      let #(x_position, _y_position) = position
       x_position < input.x_start
     }
     let going_forward = fn(data) {
-      let #(velocity, position) = data
+      let #(velocity, _position) = data
       let #(x_velocity, _) = velocity
       x_velocity > 0
     }

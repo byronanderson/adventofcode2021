@@ -40,7 +40,7 @@ fn assert_parse_scanner_readout(input: String) {
   let [first_line, ..position_lines] = input |> string.split("\n")
 
   assert Ok(re) = regex.from_string("--- scanner (\\d+) ---")
-  assert [regex.Match(_, [option.Some(id_string)])] = regex.scan(re, input)
+  assert [regex.Match(_, [option.Some(id_string)])] = regex.scan(re, first_line)
 
   let id = utils.assert_parse_int(id_string)
 

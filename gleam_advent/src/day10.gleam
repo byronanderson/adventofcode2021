@@ -75,7 +75,7 @@ fn actual_parse(line) {
       let #(block, rest) = data
       case rest {
         [] -> Ok([block])
-        other ->
+        _other ->
           actual_parse(rest)
           |> result.map(fn(other) {
             list.append([block], other)

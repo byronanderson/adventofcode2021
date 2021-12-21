@@ -82,7 +82,7 @@ fn calc(input, steps) {
   |> list.fold(map.new(), increment_count)
 
   let output = list.range(0, steps)
-  |> list.fold(data, fn(acc, i) {
+  |> list.fold(data, fn(acc, _) {
     evolve(acc, input.rules)
   })
   |> map.to_list()
@@ -111,10 +111,6 @@ fn calc(input, steps) {
   assert Ok(last) = list.last(sorted_lengths)
 
   last - first
-}
-
-fn calc_part_2(data) {
-  -1
 }
 
 pub fn part1() {

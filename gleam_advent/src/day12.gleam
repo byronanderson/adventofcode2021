@@ -141,26 +141,6 @@ fn calc_part_2(data) {
     })
   })
   |> set.size()
-
-  // paths
-  // |> list.map(fn(path) {
-  //   path
-  //   |> list.map(designation)
-  //   |> string.join(",")
-  //   |> io.print()
-
-  //   io.print("\n")
-  // })
-
-  // paths
-  // |> list.length()
-}
-
-fn designation(cave: Cave) {
-  case cave {
-    SmallCave(data) -> data
-    LargeCave(data) -> data
-  }
 }
 
 pub fn part1() {
